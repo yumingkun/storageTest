@@ -79,9 +79,6 @@ export default class Storage extends Component{
 
     };
 
-
-
-
     render() {
         return (
             <View style={styles.container}>
