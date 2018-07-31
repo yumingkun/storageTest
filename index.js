@@ -2,9 +2,9 @@
 
 import {AppRegistry} from 'react-native';
 // import App from './App';
-// import Storage from './page/Storage';
-import FlatListPage from './page/FlatListPage';
+ import Storage from './page/Storage';
+// import FlatListPage from './page/FlatListPage';
 import {name as appName} from './app.json';
 import './page/Init';//把storage设置成全局
 
-AppRegistry.registerComponent(appName, () =>FlatListPage);
+AppRegistry.registerComponent(appName, () =>Storage);

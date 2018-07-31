@@ -2,19 +2,18 @@
 import React, {Component} from 'react';
 import {
     Platform, StyleSheet, Text, View,
-    Button,TextInput,
+    Button, TextInput,
     AsyncStorage,
+    SwipeableFlatList, TouchableHighlight,//侧滑列表
 
 } from 'react-native';
 
 import Toast,{DURATION} from 'react-native-easy-toast';//导入弹出框组件
 
 
+export default class Storage extends Component{
 
-type Props = {};
-export default class Storage extends Component<Props> {
-
-    //保存
+    //保存数据
     save=()=>{
         storage.save({
             key: 'loginState',  // 注意:请不要在key中使用_下划线符号!
@@ -32,7 +31,7 @@ export default class Storage extends Component<Props> {
     };
 
 
-    //取出
+    //取出数据
     get=()=> {
         storage.load({
             key: 'loginState',
@@ -70,7 +69,7 @@ export default class Storage extends Component<Props> {
         });
     };
 
-    //移除
+    //移除数据
     remove=()=>{
         // 删除单个数据
         storage.remove({
@@ -82,9 +81,11 @@ export default class Storage extends Component<Props> {
 
 
 
+
     render() {
         return (
             <View style={styles.container}>
+
                 <Button
                     title="保存"
                     onPress={()=>{this.save()}}
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#b1daff',
-    }
+        backgroundColor:'#daffde',
+    },
+
 });
